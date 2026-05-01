@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>ContactHud-smart contact manager</title>
+    <link rel="icon" href="./img/address-book-solid.png">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style-2-js.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex justify-content-center align-content-center mt-2 ms-5" href="#">
+                <div class="logo-nav d-flex flex-wrap align-content-center justify-content-center me-2">
+                    <i class="fa-solid fa-address-book fa-sm" style="color: rgb(251, 252, 253);"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold h4 m-0">Contact<span class="color-head">Hub</span></h3>
+                    <p class="text-secondary  ">Smart Contact Manager</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto pe-5">
+                    <button class="btn btn-primary fw-bold my-button-add position-static" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">+ Add Contact</button>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <div class="icon"> <i class="fa-solid fa-bell fa-sm" style="color: rgb(151, 153, 154);"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="icon">
+                                <i class="fa-solid fa-gear fa-sm" style="color: rgb(151, 153, 154);"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="img-profillo">
+                                <img class="w-100 rounded-3" src="./img/avatar-4.jpg" alt="img-user">
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Contact</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="text-center display-4 py-3">
+                        <i class="fa-solid fa-circle-user fa-2xl" style="color: rgb(2, 103, 180);"></i>
+                    </div>
+                    <div class="text-center py-3">
+                        <button onclick="getphoto()" id="demo" class="btn btn-secondary">Change Photo</button>
+                        <input type="file" id="fileInput" style="display: none;">
+                    </div>
+                    <div class="py-2">
+                        <label for="full-name">Full Name <span class="text-danger">*</span></label>
+                        <br />
+                        <input class="button-full-name my-full-name" type="text" id="full-name"
+                            placeholder="Enter full name">
+                    </div>
+                    <div class="py-2">
+                        <label for="PhoneNumber">PhoneNumber<span class="text-danger">*</span></label>
+                        <br />
+                        <input type="tel" class="button-full-name input-phone" id="PhoneNumber"
+                            placeholder="e.g.01012345678">
+                    </div>
+                    <div class="py-2">
+                        <label for="EmailAddress">EmailAddress</label>
+                        <br />
+                        <input type="text" class="button-full-name my-address" id="EmailAddress"
+                            placeholder="Name@example.com">
+                    </div>
+                    <div class="py-2">
+                        <label for="Address">Address</label>
+                        <br />
+                        <input type="text" class="button-full-name my-address" id="Address" placeholder="Enter address">
+                    </div>
+                    <div class="for py-2">
+                        <label for="group">Group</label>
+                        <select class="w-100 rounded-3 my-select-input py-3" id="group">
+                            <option selected>select a group</option>
+                            <option value="family">family</option>
+                            <option value="freinds">freinds</option>
+                            <option value="work">work</option>
+                            <option value="school">school</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Notes" class="form-label">Notes</label>
+                        <textarea class="my-text-area form-control" id="Notes"
+                            placeholder="Add notes about this contact" rows="3"></textarea>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                <i class="fa-solid fa-star fa-xs" style="color: rgb(255, 212, 59);"></i> Favorite
+                            </label>
+                        </div>
+                        <div class="form-check ms-5">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                                <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(231, 18, 18);"></i> Emergency
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-around ">
+                    <button type="button" class="btn btn-secondary cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button onclick="AddContact()" type="button" class="btn btn-primary save-btn">Save Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="py-5">
+        <section class="py-5">
+            <div class="container-fluid mt-5 d-flex justify-content-center g-1">
+                <div class="border-logo-total d-flex flex-wrap">
+                    <div class="logo-total">
+                        <i class="fa-solid fa-users fa-sm" style="color: rgb(248, 244, 244);"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="text-secondary m-0">Total</h6>
+                        <h2 class="fw-bold h4 m-0">0</h2>
+                    </div>
+                </div>
+
+                <div class="border-logo-total mx-3 d-flex flex-wrap">
+                    <div class="logo-total star">
+                        <i class="fa-solid fa-star fa-sm" style="color: rgb(248, 244, 244);"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="text-secondary m-0">Favorites</h6>
+                        <h2 class="fw-bold h4 m-0">0</h2>
+                    </div>
+                </div>
+
+                <div class="border-logo-total d-flex flex-wrap">
+                    <div class="logo-total heart">
+                        <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(248, 244, 244);"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="text-secondary m-0">Emergency</h6>
+                        <h2 class="fw-bold h4 m-0">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-5 d-flex  ">
+                <div class="left-side col-8 ms-1">
+                    <h2 class="fw-bold ms-3">All Contacts</h2>
+                    <span class="text-secondary ms-3">Manage and organize your 0 contacts</span>
+                    <section class="search-section my-4">
+                        <div class="container-fluid">
+                            <div class="search-wrapper w-100 mx-auto position-relative">
+                                <input type="search" class="form-control ps-5  p-3 custom-search-input" id="search"
+                                    placeholder="   Search By Name Or Category..." />
+                                <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="no-contact  py-5">
+                        <div
+                            class="box-of-empty-contact d-flex flex-wrap align-content-center justify-content-center mx-auto">
+                            <i class="fa-solid fa-address-book fa-2xl" style="color: rgb(116, 113, 113);"></i>
+                        </div>
+                        <p class="text-center text-gray mt-3">No contacts found</p>
+                        <p class="text-center text-secondary">Click "Add Contact" to get started</p>
+                    </div>
+                    <div class="border-display">
+                        <div class="d-flex flex-wrap p-3">
+                            <div
+                                class="logo-contact d-flex flex-wrap justify-content-center align-content-center fw-bold text-white h5 position-relative">
+                                <div class="logo-f-star d-flex flex-wrap justify-content-center align-content-center">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: rgb(246, 245, 241);"></i>
+                                </div>
+                                <div class="logo-f-heart  d-flex flex-wrap justify-content-center align-content-center">
+                                    <i class="fa-solid fa-heart-pulse fa-2xs" style="color: rgb(246, 245, 241);"></i>
+                                </div>
+                                HO
+                            </div>
+                            <div class="details mx-3 mt-1">
+                                <h5 class="fw-semibold">Hosam Yehya</h5>
+                                <div class="d-flex">
+                                    <div class="iconTel d-flex flex-wrap justify-content-center align-content-center">
+                                        <i class="fa-solid fa-phone fa-2xs" style="color: rgb(116, 192, 252);"></i>
+                                    </div>
+                                    <div><span class="ms-2 mb-1">01554530892</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-contact d-flex ms-3">
+                            <div class="logo-massage d-flex flex-wrap justify-content-center align-content-center ">
+                                <i class="fa-solid fa-envelope" style="color: rgb(177, 151, 252);"></i>
+                            </div>
+                            <span class="text-secondary ms-3">noqog@mailinator.com</span>
+                        </div>
+                        <div class="card-contact d-flex ms-3 py-2">
+                            <div
+                                class="logo-massage location d-flex flex-wrap justify-content-center align-content-center ">
+                                <i class="fa-solid fa-location-dot" style="color: rgb(2, 129, 91);"></i>
+                            </div>
+                            <span class="text-secondary ms-3">Ipsum exercitationem</span>
+                        </div>
+                        <span class="logo-patch ms-3 fw-semibold">friends</span>
+                        <span class="logo-patch ms-3 fw-semibold patch-2">
+                            <i class="fa-solid fa-heart-pulse fa-2xs" style="color: rgb(255, 32, 86);"></i>
+                            Emergency</span>
+                        <div class=" border-top my-3 last-part-card  d-flex flex-wrap justify-content-between">
+
+                            <div class="d-flex py-2 ms-2">
+                                <div class="iconTel-card d-flex flex-wrap justify-content-center align-content-center ">
+                                    <i class="fa-solid fa-phone fa-sm" style="color: rgb(0, 153, 102);"></i>
+                                </div>
+                                <div
+                                    class="logo-massage-card d-flex flex-wrap justify-content-center align-content-center ms-2">
+                                    <i class="fa-solid fa-envelope fa-sm" style="color: rgb(127, 34, 254);"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex me-3 py-2">
+                                <div
+                                    class="same-border d-flex flex-wrap justify-content-center align-content-center  me-1">
+                                    <i class="fa-solid fa-star fa-sm" style="color: rgb(255, 212, 59);"></i>
+                                </div>
+                                <div
+                                    class="same-border d-flex flex-wrap justify-content-center align-content-center heart-puls me-1">
+                                    <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(255, 32, 86);"></i>
+                                </div>
+                                <div
+                                    class="same-border d-flex flex-wrap justify-content-center align-content-center pen me-1">
+                                    <i class="fa-solid fa-pen fa-sm" style="color: rgb(111, 76, 52);"></i>
+                                </div>
+                                <div
+                                    class="same-border d-flex flex-wrap justify-content-center align-content-center trash me-1">
+                                    <i class="fa-solid fa-trash fa-sm" style="color: rgb(111, 76, 52);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side col-4 ms-2 ">
+                    <div class="box-favourite  rounded-3  bg-white">
+                        <div class="first-box d-flex p-3">
+                            <div class="logoStar">
+                                <i class="fa-solid fa-star fa-sm" style="color: rgb(248, 244, 244);"></i>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fw-bold m-0">Favorites</p>
+                                <p class="text-secondary m-0 text-favour">Quick access to starred contacts</p>
+                            </div>
+                        </div>
+                        <div class="h-50 p-5 d-flex justify-content-center align-content-center">
+                            <p class="text-secondary ">No favorites yet</p>
+                        </div>
+                    </div>
+                    <div class="box-favourite  mt-3 rounded-3  bg-white">
+                        <div class="first-box second-box d-flex p-3">
+                            <div class="logoStar logo-emergency">
+                                <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(248, 244, 244);"></i>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fw-bold m-0">Emergency</p>
+                                <p class="text-secondary m-0 text-favour">Important contacts for urgent calls</p>
+                            </div>
+                        </div>
+                        <div class="h-50 p-5 d-flex justify-content-center align-content-center">
+                            <p class="text-secondary ">No emergency contacts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/my-javascript.js"></script>
+</body>
+
+</html>

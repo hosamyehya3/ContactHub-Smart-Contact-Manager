@@ -1,0 +1,297 @@
+body{
+    font-family: "Inter", sans-serif;
+    background-color: rgb(241, 247, 253);
+}
+
+:root{
+    --mainColor:rgb(120, 40, 253);
+}
+.logo-nav{
+    width:45px;
+    height: 45px;
+    border-radius:10px;
+    background-color: rgb(95, 53, 249);
+    padding: 10px;
+
+}
+.color-head{
+    color: rgb(127, 34, 254);
+}
+.navbar p{
+    font-size: 13px;
+}
+.img-profillo{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+.icon{
+    width: fit-content;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 10px;
+}
+.icon:hover{
+    background-color: rgba(231, 230, 230, 0.493);
+}
+.my-button-add:hover{
+    box-shadow: 1px 0 10px black;
+    transform: translateY(-2px);
+}
+.my-button-add{
+width: fit-content;
+height: fit-content;
+margin-top: 10px;
+}
+.button-full-name{
+    width: 100%;
+    border-radius:10px;
+    border: 1px solid rgb(249, 250, 251);
+    padding: 10px;
+    background-color: rgb(249, 250, 251);
+}
+.button-full-name:focus{
+    border:  3px solid var(--mainColor) !important;
+    background-color: #fff !important;
+}
+.my-text-area{
+    box-shadow: none !important;
+    border: 1px solid  rgb(159, 160, 160)!important;
+}
+.my-text-area:focus{
+    border: 1px solid var(--mainColor) !important;
+    background-color: #fff !important;
+}
+.my-select-input , .my-address , .input-phone , .my-full-name {
+    border: 1px solid rgb(159, 160, 160) !important;
+    background-color: rgb(249, 250, 251) !important;
+}
+.my-select-input:focus{
+    border: 1px solid var(--mainColor) !important;
+    background-color: #fff !important;
+
+}
+.form-check input.form-check-input:focus{
+    background-color: var(--mainColor)!important;
+}
+.form-check input.form-check-input{
+box-shadow: none;
+border: 1px solid #000;
+background-color: transparent;
+width: 20px;
+height: 20px;
+}
+.modal-footer button.cancel{
+    width: 45%;
+    padding: 10px;
+    background-color: rgb(243, 244, 246);
+    border: none;
+    color: #000;
+
+}
+.modal-footer button.cancel:hover{
+     background-color: rgb(149, 149, 150);
+}
+.modal-footer button.save-btn{
+       width: 45%;
+    padding: 10px;
+    background-color: var(--mainColor);
+    border: none;
+    color: white;
+}
+.logo-total{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(27, 105, 255);
+}
+.border-logo-total{
+    width: 30%;
+    padding:20px ;
+    border: 2px solid rgba(220, 220, 221, 0.404);
+    border-radius: 10px;
+    background-color: #fff;
+}
+.border-logo-total:hover{
+box-shadow: 0px 1px 5px #000;
+}
+.star{
+    background-color: #FF7900;
+}
+.heart{
+    background-color: rgb(244, 9, 60);
+}
+.search-wrapper i{
+    position: absolute;
+    top:20px;
+   left: 10px;
+}
+.logoStar{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 142, 0);
+}
+.text-favour{
+    font-size: 13px;
+}
+.first-box {
+    background-color: rgb(255, 247, 236);
+    border-bottom: 1px solid rgb(223, 223, 223);
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+   
+}
+.logo-emergency{
+    background-color: rgb(239, 0, 46);
+}
+.second-box{
+        background-color: rgb(254, 242, 242);
+
+}
+.box-favourite{
+ width: 90%;
+ border:2px solid rgba(220, 220, 221, 0.404) ;
+}
+.box-of-empty-contact{
+    width:100px;
+    height: 100px;
+    /* padding: 20px; */
+    border-radius: 20px;
+    background-color: rgb(243, 244, 246);
+}
+.logo-contact{
+    width: 60px;
+    height: 60px;
+    border-radius:10px;
+    background-color: rgb(228, 32, 177);
+}
+.border-display{
+    border-radius: 10px;
+    width: 50%;
+    height: 264px;
+    background-color: #fff;
+     border:2px solid rgba(220, 220, 221, 0.404) ;
+
+}
+.border-display:hover{
+    box-shadow: 1px 0 5px #000;
+}
+.iconTel{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(219, 234, 254);
+}
+.logo-f-star {
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+    background-color: rgb(255, 185, 0);
+    font-size: 13px !important;
+    box-shadow: 1px 1px 5px white;
+    border: 2px solid white;
+    z-index: 555;
+    position: absolute;
+    top:-2px;
+    right: -5px;
+}
+.logo-f-heart{
+    background-color: rgb(255, 32, 86);
+      width: 25px;
+          border: 2px solid white;
+    height: 25px;
+    border-radius:50%;
+    font-size: 13px !important;
+    box-shadow: 1px 1px 5px white;
+    z-index: 555;
+    position: absolute;
+    bottom: -2px;
+    right: -5px;
+}
+.logo-massage{
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgb(237, 233, 254);
+}
+.location{
+    background-color: rgb(208, 250, 229);
+}
+.card-contact span{
+font-size: 13px;
+}
+.logo-patch{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(219, 252, 231);
+    font-size: .8125rem;
+    color: green;
+}
+.patch-2{
+    background-color: rgb(255, 241, 242);
+    color:rgb(255, 32, 86) ;
+}
+.last-part-card{
+    background-color: rgb(250, 251, 252);
+    height: 55px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.iconTel-card , .logo-massage-card{
+width: 30px;
+height: 30px;
+padding: 10px;
+border-radius: 5px;
+background-color: #d0fae5a1;
+}
+.iconTel-card:hover , .logo-massage-card:hover{
+ background-color: #d0fae5;   
+}
+.logo-massage-card{
+    background-color: rgba(237, 233, 254, 0.712);
+
+}
+.logo-massage-card:hover{
+     background-color: rgb(237, 233, 254);
+}
+.same-border{
+  width: 30px;
+height: 30px;
+padding: 10px;
+border-radius: 5px;
+
+  background-color: rgb(254, 243, 198);
+}
+.same-border:hover{
+  background-color: rgba(254, 243, 198, 0.63);
+
+}
+.heart-puls{
+   background-color: rgb(255, 228, 230);
+}
+.heart-puls:hover{
+        
+ background-color: rgba(255, 228, 230, 0.644);
+}
+.pen{
+    background-color:#eef2ff ;
+    
+}
+.pen:hover{
+        
+ background-color:#eef2ffa6 ;
+}
+.trash{
+     background-color:rgb(255, 241, 242) ;
+
+}
+.trash:hover{
+       
+        background-color:rgba(255, 241, 242, 0.699) ;
+
+}
