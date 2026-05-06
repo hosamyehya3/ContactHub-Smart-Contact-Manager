@@ -160,7 +160,7 @@ function displayContacts() {
                                 </div>
                             </div>
                             <div class="d-flex me-3 py-2">
-                                <div onclick="changeColorGold(${i})"
+                                <div onclick="changeColorGold(${i} , '${ListOfContacts[i].EmailAddress}')"
                                     class="same-border d-flex flex-wrap justify-content-center align-content-center  me-1">
                                     <i class="fa-solid fa-star fa-sm" style="color: rgb(104, 103, 102);"></i>
                                 </div>
@@ -320,7 +320,7 @@ var foundIndex = -1 ;
     } else {
         emergencylist.push(ListOfContacts[cardIndx]);
     }
-
+localStorage.setItem(emergencylist , JSON.stringify(emergencylist))
     document.getElementById('logoThree').innerHTML = emergencylist.length;
 }
 
@@ -336,15 +336,15 @@ var favouriteList = [];
 
 function changeColorGold(cardFavour , contactEmail) {
    
-var foundIndex = -1 ;
+var foundIndeex = -1 ;
  for (var i = 0; i < favouriteList.length; i++) {
         if (favouriteList[i].EmailAddress === contactEmail) {
-            foundIndex = i;
+            foundIndeex = i;
             break;
         }
     }
-    if (foundIndex > -1) {
-        favouriteList.splice(foundIndex, 1);
+    if (foundIndeex > -1) {
+        favouriteList.splice(foundIndeex, 1);
     } else {
         favouriteList.push(ListOfContacts[cardFavour]);
     }
@@ -352,4 +352,26 @@ var foundIndex = -1 ;
     document.getElementById('favourLogo').innerHTML = favouriteList.length;
 }
 
-  
+  function IsContactNameVaild(){
+    var regex = /^[A-Z][\sa-z_]{3,}$/;
+if (regex.test(fullNameInput.value)) {
+   fullNameInput.classList.add('is-valid')
+   fullNameInput.classList.remove('is-invalid')
+}
+else{
+    fullNameInput.classList.add('is-invalid')
+   fullNameInput.classList.remove('is-valid')
+}
+  }
+  function IsContactPhoneNumberVaild() {
+    var regex = /^(010|012|015|011)[0-9]{8}$/;
+
+if (regex.test(phoneNumberInput.value)) {
+   phoneNumberInput.classList.add('is-valid')
+   phoneNumberInput.classList.remove('is-invalid')
+}
+else{
+phoneNumberInput.classList.add('is-invalid')
+   phoneNumberInput.classList.remove('is-valid')
+}
+  }

@@ -43,17 +43,19 @@ width: fit-content;
 height: fit-content;
 margin-top: 10px;
 }
-.button-full-name{
-    width: 100%;
-    border-radius:10px;
-    border: 1px solid rgb(249, 250, 251);
-    padding: 10px;
-    background-color: rgb(249, 250, 251);
+input.form-control.is-invalid , input.form-control.is-valid {
+    border: 1px solid var(--mainColor);
 }
-.button-full-name:focus{
-    border:  3px solid var(--mainColor) !important;
-    background-color: #fff !important;
+input.form-control.is-valid:focus  {
+    border: #06fc2f solid 1px !important;
+    box-shadow: none;
 }
+input.form-control.is-invalid:focus {
+    border: #f70808 solid 1px !important;
+    box-shadow: none;
+}
+
+
 .my-text-area{
     box-shadow: none !important;
     border: 1px solid  rgb(159, 160, 160)!important;
@@ -71,9 +73,7 @@ margin-top: 10px;
     background-color: #fff !important;
 
 }
-/* .form-check input.form-check-input:focus{
-    background-color: var(--mainColor)!important;
-}*/
+
 .form-check input.form-check-input{
 border: 1px solid black !important;
 box-shadow:  none !important;
@@ -300,4 +300,43 @@ color: rgb(247, 5, 5) !important;
         color:rgb(148, 2, 2) !important ;
         cursor: pointer;
 
+}
+.box-f{
+    height: 120px;
+}
+.icon-contact-favourite{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #E90071;
+
+}
+.border-d-favourite{
+width: 100%;
+height: 70px;   
+display: flex;
+flex-wrap:wrap ;
+}
+.icon-tel2{
+    width:30px;
+    height:30px ;
+    background-color: #cff3e7;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+.border-d-favourite div p{
+    font-size: .8125rem !important;
+    font-weight: bold;
+}
+.border-d-favourite:hover .icon-tel2 {
+background-color: rgb(2, 78, 55);
+
+;
+}
+.border-d-favourite:hover .icon-tel2 i{
+    color: #fff !important;
+}
+.border-d-favourite:hover{
+cursor: pointer
 }

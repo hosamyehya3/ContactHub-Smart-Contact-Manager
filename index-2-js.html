@@ -83,27 +83,24 @@
                         <input type="file" id="fileInput" style="display: none;">
                     </div>
                     <div class="py-2">
-                        <label for="full-name">Full Name <span class="text-danger">*</span></label>
-                        <br />
-                        <input class="button-full-name my-full-name" type="text" id="full-name"
+                        <label for="full-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                        <input oninput="IsContactNameVaild()" type="email" class="is-valid form-control" id="full-name"
                             placeholder="Enter full name">
                     </div>
                     <div class="py-2">
-                        <label for="PhoneNumber">PhoneNumber<span class="text-danger">*</span></label>
-                        <br />
-                        <input type="tel" class="button-full-name input-phone" id="PhoneNumber"
-                            placeholder="e.g.01012345678">
+                        <label for="PhoneNumber" class="form-label">PhoneNumber<span class="text-danger">*</span></label>
+                        <input oninput="IsContactPhoneNumberVaild()" type="tel" class="is-valid form-control" id="PhoneNumber" placeholder="e.g.01012345678">
                     </div>
                     <div class="py-2">
-                        <label for="EmailAddress">EmailAddress</label>
-                        <br />
-                        <input type="text" class="button-full-name my-address" id="EmailAddress"
+                        <label for="EmailAddress" class="form-label">EmailAddress</label>
+
+                        <input type="text" class="form-control is-valid" id="EmailAddress"
                             placeholder="Name@example.com">
                     </div>
                     <div class="py-2">
-                        <label for="Address">Address</label>
-                        <br />
-                        <input type="text" class="button-full-name my-address" id="Address" placeholder="Enter address">
+                        <label for="Address" class="form-label">Address</label>
+
+                        <input type="text" class="form-control is-valid" id="Address" placeholder="Enter address">
                     </div>
                     <div class="for py-2">
                         <label for="group">Group</label>
@@ -124,7 +121,7 @@
                     <div class="d-flex flex-wrap">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                            <label class="form-check-label" for="checkDefault">
+                            <label class=" form-check-label" for="checkDefault">
                                 <i class="fa-solid fa-star fa-xs" style="color: rgb(255, 212, 59);"></i> Favorite
                             </label>
                         </div>
@@ -151,8 +148,8 @@
                         <i class="fa-solid fa-users fa-sm" style="color: rgb(248, 244, 244);"></i>
                     </div>
                     <div id="logoOne" class="ms-3">
-                     <h6 class="text-secondary m-0">Total</h6> 
-                        <h2 class="fw-bold h4 m-0">0</h2> 
+                        <h6 class="text-secondary m-0">Total</h6>
+                        <h2 class="fw-bold h4 m-0">0</h2>
                     </div>
                 </div>
 
@@ -187,8 +184,8 @@
                                     placeholder="   Search By Name Or Category..." />
                                 <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
                             </div>
-                        <div id="demoo"  class="py-1 ">
-                        <!-- <div
+                            <div id="demoo" class="py-1 ">
+                                <!-- <div
                             class="box-of-empty-contact d-flex flex-wrap align-content-center justify-content-center mx-auto">
                             <i class="fa-solid fa-address-book fa-2xl" style="color: rgb(116, 113, 113);"></i>
                         </div>
@@ -196,12 +193,12 @@
                         <p class="text-center text-secondary">Click "Add Contact" to get started</p>
                     </div> -->
 
-                        </div>
+                            </div>
                     </section>
-                  
-                    <div id="demoo"   py-3 ">
+
+                    <div id="demoo" py-3 ">
 <!-- 
-  <div class="border-display">
+  <div class=" border-display">
                         <div class="d-flex flex-wrap p-3">
                             <div
                                 class="logo-contact d-flex flex-wrap justify-content-center align-content-center fw-bold text-white h5 position-relative">
@@ -272,44 +269,58 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
-
- -->
-                       
-
                     </div>
+
+                    -->
+
 
                 </div>
-                <div class="right-side col-4 ms-2 ">
-                    <div class="box-favourite  rounded-3  bg-white">
-                        <div class="first-box d-flex p-3">
-                            <div class="logoStar">
-                                <i class="fa-solid fa-star fa-sm" style="color: rgb(248, 244, 244);"></i>
-                            </div>
-                            <div class="ms-2">
-                                <p class="fw-bold m-0">Favorites</p>
-                                <p class="text-secondary m-0 text-favour">Quick access to starred contacts</p>
-                            </div>
+
+            </div>
+            <div class="right-side col-4 ms-2 ">
+                <div class="box-favourite  rounded-3  bg-white">
+                    <div class="first-box d-flex p-3">
+                        <div class="logoStar">
+                            <i class="fa-solid fa-star fa-sm" style="color: rgb(248, 244, 244);"></i>
                         </div>
-                        <div class="h-50 p-5 d-flex justify-content-center align-content-center">
-                            <p class="text-secondary ">No favorites yet</p>
+                        <div class="ms-2">
+                            <p class="fw-bold m-0">Favorites</p>
+                            <p class="text-secondary m-0 text-favour">Quick access to starred contacts</p>
                         </div>
                     </div>
-                    <div id="emergency" class="box-favourite  mt-3 rounded-3  bg-white">
-                        <div class="first-box second-box d-flex p-3">
-                            <div class="logoStar logo-emergency">
-                                <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(248, 244, 244);"></i>
+                    <div class="box-f  p-1 d-flex justify-content-center align-content-center">
+                        <p class="text-secondary d-flex justify-content-center align-items-center">No favorites yet</p>
+                        <!-- <div
+                            class="border border-d-favourite border-1 position-relative rounded-2 bg-body-secondary mx-auto">
+                            <div
+                                class="mt-3 icon-contact-favourite d-flex flex-wrap justify-content-center align-items-center fw-bold  rounded-3 bg-warning mt-2 ms-3">
+                                SC</div>
+                            <div class="m-0 pt-2 ps-3 mt-2 ">
+                                <p class="m-0">Shana Chase</p>
+                                <p class="m-0 fs-6 text-secondary">01554530892</p>
                             </div>
-                            <div class="ms-2">
-                                <p class="fw-bold m-0">Emergency</p>
-                                <p class="text-secondary m-0 text-favour">Important contacts for urgent calls</p>
+                            <div
+                                class="rounded-2 icon-tel2 d-flex flex-wrap justify-content-center align-items-center mt-2">
+                                <i class="fa-solid fa-phone fa-xs" style="color: rgb(2, 78, 55);"></i>
                             </div>
-                        </div>
-                        <div class="h-50 p-5 d-flex justify-content-center align-content-center">
-                            <p class="text-secondary ">No emergency contacts</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
+                <div id="emergency" class="box-favourite  mt-3 rounded-3  bg-white">
+                    <div class="first-box second-box d-flex p-3">
+                        <div class="logoStar logo-emergency">
+                            <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(248, 244, 244);"></i>
+                        </div>
+                        <div class="ms-2">
+                            <p class="fw-bold m-0">Emergency</p>
+                            <p class="text-secondary m-0 text-favour">Important contacts for urgent calls</p>
+                        </div>
+                    </div>
+                    <div class="h-50 p-5 d-flex justify-content-center align-content-center">
+                        <p class="text-secondary ">No emergency contacts</p>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
     </main>
@@ -317,7 +328,7 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/my-javascript.js"></script>
 </body>
