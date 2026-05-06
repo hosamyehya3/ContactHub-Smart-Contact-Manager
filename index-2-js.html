@@ -144,15 +144,15 @@
         </div>
     </div>
     <main class="py-5">
-        <section class="py-5">
+        <section class=" py-5">
             <div class="container-fluid mt-5 d-flex justify-content-center g-1">
                 <div class="border-logo-total d-flex flex-wrap">
                     <div class="logo-total">
                         <i class="fa-solid fa-users fa-sm" style="color: rgb(248, 244, 244);"></i>
                     </div>
-                    <div class="ms-3">
-                        <h6 class="text-secondary m-0">Total</h6>
-                        <h2 class="fw-bold h4 m-0">0</h2>
+                    <div id="logoOne" class="ms-3">
+                     <h6 class="text-secondary m-0">Total</h6> 
+                        <h2 class="fw-bold h4 m-0">0</h2> 
                     </div>
                 </div>
 
@@ -162,7 +162,7 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="text-secondary m-0">Favorites</h6>
-                        <h2 class="fw-bold h4 m-0">0</h2>
+                        <h2 id="favourLogo" class="fw-bold h4 m-0">0</h2>
                     </div>
                 </div>
 
@@ -172,32 +172,36 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="text-secondary m-0">Emergency</h6>
-                        <h2 class="fw-bold h4 m-0">0</h2>
+                        <h2 id="logoThree" class="fw-bold h4 m-0">0</h2>
                     </div>
                 </div>
             </div>
             <div class="container-fluid py-5 d-flex  ">
                 <div class="left-side col-8 ms-1">
                     <h2 class="fw-bold ms-3">All Contacts</h2>
-                    <span class="text-secondary ms-3">Manage and organize your 0 contacts</span>
+                    <span class="text-secondary ms-3">Manage and organize your <span id="count">0</span> contacts</span>
                     <section class="search-section my-4">
                         <div class="container-fluid">
-                            <div class="search-wrapper w-100 mx-auto position-relative">
+                            <div class="search-wrapper my-5 w-100 mx-auto position-relative">
                                 <input type="search" class="form-control ps-5  p-3 custom-search-input" id="search"
                                     placeholder="   Search By Name Or Category..." />
                                 <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
                             </div>
-                        </div>
-                    </section>
-                    <div class="no-contact  py-5">
-                        <div
+                        <div id="demoo"  class="py-1 ">
+                        <!-- <div
                             class="box-of-empty-contact d-flex flex-wrap align-content-center justify-content-center mx-auto">
                             <i class="fa-solid fa-address-book fa-2xl" style="color: rgb(116, 113, 113);"></i>
                         </div>
                         <p class="text-center text-gray mt-3">No contacts found</p>
                         <p class="text-center text-secondary">Click "Add Contact" to get started</p>
-                    </div>
-                    <div class="border-display">
+                    </div> -->
+
+                        </div>
+                    </section>
+                  
+                    <div id="demoo"   py-3 ">
+<!-- 
+  <div class="border-display">
                         <div class="d-flex flex-wrap p-3">
                             <div
                                 class="logo-contact d-flex flex-wrap justify-content-center align-content-center fw-bold text-white h5 position-relative">
@@ -268,7 +272,13 @@
                                 </div>
                             </div>
                         </div>
+                    </div> 
+
+ -->
+                       
+
                     </div>
+
                 </div>
                 <div class="right-side col-4 ms-2 ">
                     <div class="box-favourite  rounded-3  bg-white">
@@ -285,7 +295,7 @@
                             <p class="text-secondary ">No favorites yet</p>
                         </div>
                     </div>
-                    <div class="box-favourite  mt-3 rounded-3  bg-white">
+                    <div id="emergency" class="box-favourite  mt-3 rounded-3  bg-white">
                         <div class="first-box second-box d-flex p-3">
                             <div class="logoStar logo-emergency">
                                 <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(248, 244, 244);"></i>
@@ -307,7 +317,7 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/my-javascript.js"></script>
 </body>

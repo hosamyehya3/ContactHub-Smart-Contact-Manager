@@ -71,16 +71,15 @@ margin-top: 10px;
     background-color: #fff !important;
 
 }
-.form-check input.form-check-input:focus{
+/* .form-check input.form-check-input:focus{
     background-color: var(--mainColor)!important;
-}
+}*/
 .form-check input.form-check-input{
-box-shadow: none;
-border: 1px solid #000;
-background-color: transparent;
-width: 20px;
-height: 20px;
-}
+border: 1px solid black !important;
+box-shadow:  none !important;
+
+} 
+
 .modal-footer button.cancel{
     width: 45%;
     padding: 10px;
@@ -170,7 +169,7 @@ box-shadow: 0px 1px 5px #000;
 }
 .border-display{
     border-radius: 10px;
-    width: 50%;
+    width: 48%;
     height: 264px;
     background-color: #fff;
      border:2px solid rgba(220, 220, 221, 0.404) ;
@@ -267,31 +266,38 @@ border-radius: 5px;
 
   background-color: rgb(254, 243, 198);
 }
-.same-border:hover{
-  background-color: rgba(254, 243, 198, 0.63);
+.same-border i:hover{
+ color: rgb(253, 203, 3) !important;
+         cursor: pointer;
+
 
 }
 .heart-puls{
    background-color: rgb(255, 228, 230);
 }
-.heart-puls:hover{
+.heart-puls i:hover{
         
- background-color: rgba(255, 228, 230, 0.644);
+color: rgb(247, 5, 5) !important;
+        cursor: pointer;
+
 }
 .pen{
     background-color:#eef2ff ;
     
 }
-.pen:hover{
+.pen i:hover{
         
- background-color:#eef2ffa6 ;
-}
-.trash{
-     background-color:rgb(255, 241, 242) ;
+ color:#043dfa !important;
+         cursor: pointer;
 
 }
-.trash:hover{
+.trash{
+     background-color:rgb(253, 234, 235) ;
+
+}
+.trash i:hover{
        
-        background-color:rgba(255, 241, 242, 0.699) ;
+        color:rgb(148, 2, 2) !important ;
+        cursor: pointer;
 
 }
