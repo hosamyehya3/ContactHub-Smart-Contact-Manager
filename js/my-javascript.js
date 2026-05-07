@@ -20,14 +20,7 @@ var searchContactInput = document.getElementById('search');
 
 
 var ListOfContacts = [];
-// function count(){
-//     if (ListOfContacts == 0) {
-//         document.getElementById('count').innerHTML=`<span id="count">0</span>`;  
-//     }else{
-        
-//         document.getElementById('count').innerHTML=`<span id="count">${(ListOfContacts.lenght)}</span>`; 
-//     }
-// }
+
 if (localStorage.getItem("ListOfContacts") !== null) {
 
     ListOfContacts = JSON.parse(localStorage.getItem("ListOfContacts"))
@@ -107,7 +100,7 @@ function displayContacts() {
     var cartona = "";
     for (var i = 0; i < ListOfContacts.length; i++) {
         cartona += `
-      <div class="border-display m-1">
+      <div class="border-display  m-1">
                         <div class="d-flex flex-wrap  p-3">
                             <div
                                 class="logo-contact d-flex flex-wrap justify-content-center align-content-center fw-bold text-white h5 position-relative">
@@ -324,14 +317,6 @@ localStorage.setItem(emergencylist , JSON.stringify(emergencylist))
     document.getElementById('logoThree').innerHTML = emergencylist.length;
 }
 
-
-
-
-
-
-
-
-
 var favouriteList = [];
 
 function changeColorGold(cardFavour , contactEmail) {
@@ -375,3 +360,25 @@ phoneNumberInput.classList.add('is-invalid')
    phoneNumberInput.classList.remove('is-valid')
 }
   }
+function regexEmailAddress() {
+    var regex = /^[a-zA-z]{5,}@[a-zA-Z  _]{3,}.com$/;
+    if (regex.test(fullEmailAddressInput.value)) {
+   fullEmailAddressInput.classList.add('is-valid')
+   fullEmailAddressInput.classList.remove('is-invalid')
+}
+else{
+fullEmailAddressInput.classList.add('is-invalid')
+  fullEmailAddressInput.classList.remove('is-valid')
+}
+}
+
+function RegexAddress() {
+    var regex = /^[a-zA-Z]{20,}$/
+    if (regex.test(fullAddressInput.value)) {
+        fullAddressInput.classList.add('is-invalid')
+        fullAddressInput.classList.remove('is-valid')
+    }else{
+          fullAddressInput.classList.add('is-valid')
+        fullAddressInput.classList.remove('is-invalid')
+    }
+}
