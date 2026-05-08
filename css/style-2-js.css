@@ -6,6 +6,19 @@ body{
 :root{
     --mainColor:rgb(120, 40, 253);
 }
+.Show{
+    animation: movie 0.5s ease ;
+}
+@keyframes movie {
+    from{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .logo-nav{
     width:45px;
     height: 45px;
@@ -302,7 +315,7 @@ color: rgb(247, 5, 5) !important;
 
 }
 .box-f{
-    height: 120px;
+    min-height:25vh;
 }
 .icon-contact-favourite{
     width: 40px;
