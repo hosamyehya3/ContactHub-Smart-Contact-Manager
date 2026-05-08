@@ -353,3 +353,10 @@ background-color: rgb(2, 78, 55);
 .border-d-favourite:hover{
 cursor: pointer
 }
+.icon-tel3{
+    background-color: #faaabe;
+}
+.border-d-favourite:hover .icon-tel3{
+    background-color: #fa0441;
+    color: #fff !important;
+}

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/style-2-js.css">
 </head>
 
-<body>
+<body id="upgrade">
     <nav class="navbar Show  navbar-expand-lg bg-white fixed-top shadow mb-5">
         <div class="container-fluid">
             <a class="navbar-brand d-flex justify-content-center align-content-center mt-2 ms-5" href="#">
@@ -67,7 +67,8 @@
     </nav>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div >
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,11 +139,14 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-around ">
                     <button type="button" class="btn btn-secondary cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button onclick="AddContact()" type="button" class="btn btn-primary save-btn">Save Contact</button>
+                    <button id="addcontact" onclick="AddContact()" type="button" class="btn btn-primary save-btn">Save Contact</button>
+                    <button onclick="updateContact()" id="updateBtn" type="button" class="btn btn-primary update-btn d-none">Update Contact</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
+     </div>
+   
     <main class="py-5">
         <section class=" py-5">
             <div class="container-fluid mt-5 d-flex justify-content-center g-1">
@@ -323,7 +327,7 @@
                                 <p class="text-secondary m-0 text-favour">Important contacts for urgent calls</p>
                             </div>
                         </div>
-                        <div id="callemergency"  class="h-50 py-1  box-f">
+                        <div id="callemergency"  class="h-50 p-1  box-f">
                             <!-- <p class="text-secondary ">No emergency contacts</p> -->
                         </div>
                     </div>

@@ -16,6 +16,8 @@ var fullAddressInput = document.getElementById("Address");
 var fullgroupInput = document.getElementById("group");
 var fullNotesInput = document.getElementById("Notes");
 var searchContactInput = document.getElementById("search");
+var addcontact =document.getElementById("addcontact");
+var updateBtnElement =document.getElementById("updateBtn");
 
 var ListOfContacts = [];
 
@@ -32,8 +34,13 @@ function count() {
     document.getElementById("count").innerHTML =
       `<span id="count">${ListOfContacts.length}</span>`;
   }
+
+  localStorage.setItem("ListOfContacts", JSON.stringify(ListOfContacts));
+  displayContacts(ListOfContacts);
 }
+
 function AddContact() {
+  
   var contact = {
     name: fullNameInput.value,
     number: phoneNumberInput.value,
@@ -49,6 +56,7 @@ function AddContact() {
   changCount();
   resetAllInputs();
 }
+
 function changCount() {
   if (ListOfContacts.length === 0) {
     document.getElementById("logoOne").innerHTML = `
@@ -67,6 +75,7 @@ function changCount() {
 
   ListOfContacts = JSON.parse(localStorage.getItem("ListOfContacts"));
 }
+
 
 function resetAllInputs() {
   fullNameInput.value = "";
@@ -105,7 +114,7 @@ function displayContacts(displayList) {
                                 <div class="logo-f-heart  d-flex flex-wrap justify-content-center align-content-center">
                                     <i class="fa-solid fa-heart-pulse fa-2xs" style="color: rgb(246, 245, 241);"></i>
                                 </div>
-                                ${displayList[i].name.toUpperCase().split("", 2)}
+                                ${displayList[i].name.toUpperCase().split("", 1)}
                             </div>
                             <div class="details mx-3 mt-1">
                                 <h5 class="fw-semibold">${displayList[i].name}</h5>
@@ -156,7 +165,9 @@ function displayContacts(displayList) {
                                     class="same-border d-flex flex-wrap justify-content-center align-content-center heart-puls me-1">
                                     <i class="fa-solid fa-heart-pulse fa-sm" style="color: rgb(104, 103, 102);"></i>
                                 </div>
-                                <div
+
+                               
+                                <div data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setData(${i})"
                                     class="same-border d-flex flex-wrap justify-content-center align-content-center pen me-1">
                                     <i class="fa-solid fa-pen fa-sm" style="color: rgb(104, 103, 102);"></i>
                                 </div>
@@ -172,11 +183,44 @@ function displayContacts(displayList) {
   }
   document.getElementById("demoo").innerHTML = cartona;
 }
+var updatedIndex = 0;
+
+function setData(cardId) {
+updatedIndex = cardId
+  var item = ListOfContacts[cardId];
+
+  fullNameInput.value = item.name;
+   phoneNumberInput.value = item.number;
+ fullEmailAddressInput.value = item.EmailAddress;
+ fullAddressInput.value = item.address;
+    fullgroupInput.value = item.group;
+ fullNotesInput.value = item.notes ;
+  console.log(ListOfContacts[cardId]);
+  addcontact.classList.add('d-none');
+updateBtnElement.classList.remove('d-none')
+}
+function updateContact() {
+ListOfContacts[updatedIndex].name = fullNameInput.value  ;
+ListOfContacts[updatedIndex].number = phoneNumberInput.value  ;
+ListOfContacts[updatedIndex].EmailAddress = fullEmailAddressInput.value ; 
+ListOfContacts[updatedIndex].address = fullAddressInput.value  ;
+ListOfContacts[updatedIndex].group = fullgroupInput.value  ;
+ListOfContacts[updatedIndex].item = fullNotesInput.value  ;
+localStorage.setItem("ListOfContacts", JSON.stringify(ListOfContacts));
+  displayContacts(ListOfContacts);
+  resetAllInputs()
+}
+
+
+
+
+
+
 
 function deleteContact(index) {
   Swal.fire({
     title: "Delete Contact?",
-    text: `Are you sure you want to delete ${fullNameInput.value}? This action cannot be undone.`,
+    text: `Are you sure you want to delete This contact? This action cannot be undone.`,
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#606773",
@@ -186,6 +230,9 @@ function deleteContact(index) {
     if (result.isConfirmed) ListOfContacts.splice(index, 1);
     localStorage.setItem("ListOfContacts", JSON.stringify(ListOfContacts));
     displayContacts(ListOfContacts);
+  var favouriteList = [];
+  console.log(favouriteList);
+  
 
     Swal.fire({
       title: "Deleted!",
@@ -194,10 +241,10 @@ function deleteContact(index) {
     });
   });
 }
-
+ 
 function searchContact() {
   var searchTerm = searchContactInput.value;
-  var searchList = [];
+ var searchList = [];
 
   for (var i = 0; i < ListOfContacts.length; i++) {
     if (
@@ -218,10 +265,13 @@ function searchContact() {
 
 var emergencylist = [];
 
-if (emergencylist.length === 0) {
+function noEmergince(){
+  if (emergencylist.length === 0) {
   document.getElementById("callemergency").innerHTML =
     ' <p class="text-secondary d-flex justify-content-center align-items-center mt-5">No emergency contacts</p>';
 }
+}
+noEmergince()
 
 function changColorRed(cardIndx, contactEmail) {
   var foundIndex = -1;
@@ -236,40 +286,51 @@ function changColorRed(cardIndx, contactEmail) {
   } else {
     emergencylist.push(ListOfContacts[cardIndx]);
   }
+
   localStorage.setItem(emergencylist, JSON.stringify(emergencylist));
   document.getElementById("logoThree").innerHTML = emergencylist.length;
   if (emergencylist.length > 0) {
     var cartona = "";
-    for (var i = 0; i < emergencylist.length; i++) {
+    for (var io = 0; io < emergencylist.length; io++) {
       cartona += `
     
     <div
                             class="border my-1 border-d-favourite border-1 position-relative rounded-2 bg-body-secondary mx-auto">
                             <div
                                 class="mt-3 icon-contact-favourite d-flex flex-wrap justify-content-center align-items-center fw-bold  rounded-3 bg-warning mt-2 ms-3">
-                                SC</div>
+                                 ${emergencylist[io].name.toUpperCase().split("", 1)}</div>
                             <div class="m-0 pt-2 ps-3 mt-2 ">
-                                <p class="m-0">${ListOfContacts[i].name}</p>
-                                <p class="m-0 fs-6 text-secondary">${ListOfContacts[i].number}}</p>
+                                <p class="m-0">${emergencylist[io].name}</p>
+                                <p class="m-0 fs-6 text-secondary">${emergencylist[io].number}</p>
                             </div>
                             <div
-                                class="rounded-2 icon-tel2 d-flex flex-wrap justify-content-center align-items-center mt-2">
-                                <i class="fa-solid fa-phone fa-xs" style="color: rgb(2, 78, 55);"></i>
+                                class="rounded-2 icon-tel2 icon-tel3  d-flex flex-wrap justify-content-center align-items-center mt-2">
+                                <i class="fa-solid fa-phone fa-xs" style="color: #FF2056;"></i>
                             </div>
                         </div>
     `;
 
       document.getElementById("callemergency").innerHTML = cartona;
     }
+  }else{
+      noEmergince()
+
   }
+localStorage.setItem("ListOfContacts", JSON.stringify(ListOfContacts));
+  displayContacts(ListOfContacts);
+
+
 }
 
 var favouriteList = [];
-
-if (favouriteList.length === 0) {
+function noFavourite() {
+ if (favouriteList.length === 0) {
   document.getElementById("favourite").innerHTML =
     ' <p class="text-secondary d-flex justify-content-center align-items-center mt-5">No favorites yet</p>';
+} 
 }
+noFavourite()
+
 
 function changeColorGold(cardFavour, contactEmail) {
   var foundIndeex = -1;
@@ -296,10 +357,10 @@ function changeColorGold(cardFavour, contactEmail) {
                             class="border my-1  border-d-favourite border-1 d-flex justify-content-start align-items-start position-relative rounded-2 bg-body-secondary mx-auto">
                             <div
                                 class="mt-3 icon-contact-favourite d-flex flex-wrap justify-content-center align-items-center fw-bold  rounded-3 bg-warning mt-2 ms-3">
-                                SC</div>
+                                 ${favouriteList[i].name.toUpperCase().split("", 1)}</div>
                             <div class="m-0 pt-2 ps-3 mt-2 ">
-                                <p class="m-0">${ListOfContacts[cardFavour].name}</p>
-                                <p class="m-0 fs-6 text-secondary">${ListOfContacts[cardFavour].number}</p>
+                                <p class="m-0">${favouriteList[i].name}</p>
+                                <p class="m-0 fs-6 text-secondary">${favouriteList[i].number}</p>
                             </div>
                             <div
                                 class="rounded-2 icon-tel2 d-flex flex-wrap justify-content-center align-items-center mt-2">
@@ -310,7 +371,14 @@ function changeColorGold(cardFavour, contactEmail) {
                 `;
       document.getElementById("favourite").innerHTML = cartona;
     }
+  }else{
+    noFavourite()
   }
+
+localStorage.setItem("ListOfContacts", JSON.stringify(ListOfContacts));
+  displayContacts(ListOfContacts);
+
+
 }
 
 function IsContactNameVaild() {
